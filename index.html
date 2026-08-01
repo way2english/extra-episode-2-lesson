@@ -929,14 +929,21 @@ function loadCarouselForPanel(panel) {
   });
 }
 
-// ---- Wordwall Carousel ----
+// ---- Wordwall Carousel (оновлена функція для перезавантаження iframe) ----
 function loadIframesInSlide(slideEl) {
   if (!slideEl) return;
-  const iframes = slideEl.querySelectorAll('iframe[data-src]');
+  const iframes = slideEl.querySelectorAll('iframe');
   iframes.forEach(iframe => {
+    // Якщо є data-src, а src порожній, беремо з data-src
     if (iframe.dataset.src && !iframe.src) {
       iframe.src = iframe.dataset.src;
       iframe.removeAttribute('data-src');
+    } else if (iframe.src) {
+      // Якщо src вже є (наприклад, перший слайд), але він не завантажився через те, 
+      // що вкладка була прихована (display: none) - примусово перезавантажуємо
+      const currentSrc = iframe.src;
+      iframe.src = '';
+      iframe.src = currentSrc;
     }
   });
 }
