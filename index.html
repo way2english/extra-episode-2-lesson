@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Extra English – 06 Bridget wins the lottery - Way2English</title>
+  <title>Extra English – 02 Hector goes shopping - Way2English</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
     .tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
       margin: 20px 16px 24px;
       background: #fff;
       padding: 8px;
@@ -47,20 +47,21 @@
     }
     .tab-btn {
       flex: 1 0 auto;
-      padding: 10px 14px;
+      padding: 8px 12px;
       border: none;
       border-radius: 14px;
       background: #f1f4fa;
       color: #64748b;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
       transition: .2s;
       font-family: inherit;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       justify-content: center;
+      min-width: 50px;
     }
     .tab-btn:hover { background: #e2e8f0; color: #1e293b; }
     .tab-btn.active {
@@ -136,30 +137,6 @@
     }
     .grammar-box strong { color: #764ba2; }
 
-    .vocab-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-    }
-    .vocab-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f8faff;
-      border: 1px solid #e9edf4;
-      border-radius: 12px;
-      padding: 10px 14px;
-    }
-    .vocab-word { font-weight: 700; font-size: 14px; }
-    .vocab-ua { font-size: 12px; color: #64748b; margin-top: 2px; }
-    .speak-btn {
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 0 4px;
-    }
-
     .quiz-opt {
       display: block;
       width: 100%;
@@ -231,13 +208,46 @@
       transition: .2s;
     }
     .check-btn:hover { background: #5a6fd6; }
-    .pzl-audio-wrap { margin: 16px 0 6px; }
     .pzl-score { margin-top: 12px; font-weight: 700; color: #764ba2; }
 
     .car-slide { display: none; animation: fadeUp .3s ease; }
     .car-slide.active { display: block; }
+
+    .ww-carousel {
+      background: #f8faff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e9edf4;
+      margin-top: 12px;
+    }
+    .ww-carousel .car-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .ww-carousel .car-btn {
+      padding: 8px 20px;
+      border: 1px solid #e9edf4;
+      border-radius: 40px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: .2s;
+    }
+    .ww-carousel .car-btn:hover:not(:disabled) { background: #f0f4ff; }
+    .ww-carousel .car-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .ww-carousel .car-counter { font-weight: 600; color: #64748b; font-size: 14px; }
+    .ww-slide { display: none; }
+    .ww-slide.active { display: block; }
+    .ww-slide iframe { width: 100%; border: 0; border-radius: 12px; max-width: 100%; height: 380px; }
+
     .reading-conv { font-size: 15px; line-height: 2; }
     .reading-speaker { font-weight: 800; color: #667eea; }
+    .reading-line { margin-bottom: 4px; }
 
     .sp-dialog { padding: 0; }
     .sp-dialog h3 { font-size: 17px; margin-bottom: 8px; color: #764ba2; }
@@ -416,7 +426,9 @@
     .modal-close { background: #e9edf4; }
     .copy-btn { background: #667eea; color: #fff; }
 
-    /* ===== КНОПКИ ПЕРЕХОДУ ===== */
+    .quizlet-wrap { margin-bottom: 16px; }
+    .quizlet-wrap iframe { border-radius: 12px; width: 100%; height: 500px; border: 0; }
+
     .next-task-wrapper {
       display: flex;
       justify-content: flex-end;
@@ -444,9 +456,9 @@
 
     @media (max-width: 600px) {
       .hero h1 { font-size: 20px; }
-      .tab-btn { font-size: 11px; padding: 8px 10px; flex: 1 1 auto; }
+      .tab-btn { font-size: 10px; padding: 6px 8px; flex: 1 1 auto; }
       .flash-grid { grid-template-columns: 1fr 1fr; }
-      .vocab-grid { grid-template-columns: 1fr; }
+      .ww-slide iframe { height: 300px; }
       .next-task-wrapper { justify-content: center; }
     }
   </style>
@@ -454,37 +466,45 @@
 <body>
 
 <div class="hero">
-  <h1>🎬 Extra English – 06 Bridget wins the lottery - Way2English</h1>
+  <h1>🎬 Extra English – 02 Hector goes shopping - Way2English</h1>
   <p>Рівень A2 · Розуміння · Лексика · Розмова</p>
-  <div class="badge">📐 Present Perfect · 3 частини</div>
+  <div class="badge">📐 Shopping vocabulary · Polite requests · Numbers</div>
 </div>
 
 <div class="tabs" id="tabHeaders">
-  <button class="tab-btn active" data-tab="part1">📺 Частина 1</button>
+  <button class="tab-btn active" data-tab="vocab1">📚 Лексика 1</button>
+  <button class="tab-btn" data-tab="part1">📺 Частина 1</button>
+  <button class="tab-btn" data-tab="vocab2">📚 Лексика 2</button>
   <button class="tab-btn" data-tab="part2">📺 Частина 2</button>
+  <button class="tab-btn" data-tab="vocab3">📚 Лексика 3</button>
   <button class="tab-btn" data-tab="part3">📺 Частина 3</button>
+  <button class="tab-btn" data-tab="vocab4">📚 Лексика 4</button>
   <button class="tab-btn" data-tab="practice">📚 Практика</button>
 </div>
 
 <div class="container">
 
-  <!-- ========== PART 1 ========== -->
-  <div class="tab-panel active" id="panel-part1">
+  <!-- ========== VOCABULARY 1 TAB ========== -->
+  <div class="tab-panel active" id="panel-vocab1">
     <div class="part-card">
-      <h2>🎬 Частина 1 <small>(0:00 – 9:14)</small></h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/7nVsZ6_ncds?start=0&end=554" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="video-note">⏱️ Відео автоматично зупиниться в кінці частини.</div>
-      <div class="grammar-box">
-        <strong>📐 Граматика: Present Perfect</strong><br>
-        Зверніть увагу на <em>I have won, I've just been, have you lost?</em> — минуле, пов’язане з теперішнім.
+      <h2>📚 Слова до епізоду (Частина 1)</h2>
+      <div class="quizlet-wrap">
+        <iframe src="https://quizlet.com/810517030/flashcards/embed?i=37cc42&x=1jj1" height="500" width="100%" style="border:0;border-radius:12px;"></iframe>
       </div>
     </div>
+    <div class="next-task-wrapper">
+      <button class="next-task-btn" onclick="goToTab('part1')">Наступне завдання →</button>
+    </div>
+  </div>
 
+  <!-- ========== PART 1 ========== -->
+  <div class="tab-panel" id="panel-part1">
     <div class="part-card">
-      <h2>📚 Слова до частини 1</h2>
-      <div class="vocab-grid" id="vocab1"></div>
+      <h2>🎬 Частина 1 <small>(0:00 – 9:02)</small></h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/Vp9G3j_im0s?start=0&end=542" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-note">⏱️ Відео автоматично зупиниться в кінці частини.</div>
     </div>
 
     <div class="part-card">
@@ -494,19 +514,24 @@
     </div>
 
     <div class="part-card">
-      <h2>🃏 Картки (сталі вирази) — Частина 1</h2>
-      <button class="flip-all-btn" onclick="flipAll()">🔄 Перевернути всі</button>
-      <div class="flash-grid" id="flashGridPart1"></div>
-    </div>
-
-    <div class="part-card">
       <h2>🧩 Пазл — заповни пропуски</h2>
       <div id="puzzle1"></div>
       <button class="check-btn" onclick="checkPuzzle(0)">✅ Перевірити</button>
       <div class="pzl-score" id="pzl-score-0"></div>
     </div>
+    <div class="next-task-wrapper">
+      <button class="next-task-btn" onclick="goToTab('vocab2')">Наступне завдання →</button>
+    </div>
+  </div>
 
-    <!-- КНОПКА ПЕРЕХОДУ -->
+  <!-- ========== VOCABULARY 2 TAB ========== -->
+  <div class="tab-panel" id="panel-vocab2">
+    <div class="part-card">
+      <h2>📚 Слова до епізоду (Частина 2)</h2>
+      <div class="quizlet-wrap">
+        <iframe src="https://quizlet.com/812412965/flashcards/embed?i=37cc42&x=1jj1" height="500" width="100%" style="border:0;border-radius:12px;"></iframe>
+      </div>
+    </div>
     <div class="next-task-wrapper">
       <button class="next-task-btn" onclick="goToTab('part2')">Наступне завдання →</button>
     </div>
@@ -515,16 +540,11 @@
   <!-- ========== PART 2 ========== -->
   <div class="tab-panel" id="panel-part2">
     <div class="part-card">
-      <h2>🎬 Частина 2 <small>(9:14 – 16:15)</small></h2>
+      <h2>🎬 Частина 2 <small>(9:02 – 14:21)</small></h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/7nVsZ6_ncds?start=554&end=975" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/Vp9G3j_im0s?start=542&end=861" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
       </div>
       <div class="video-note">⏱️ Відео автоматично зупиниться в кінці частини.</div>
-    </div>
-
-    <div class="part-card">
-      <h2>📚 Слова до частини 2</h2>
-      <div class="vocab-grid" id="vocab2"></div>
     </div>
 
     <div class="part-card">
@@ -534,19 +554,32 @@
     </div>
 
     <div class="part-card">
-      <h2>🃏 Картки (сталі вирази) — Частина 2</h2>
-      <button class="flip-all-btn" onclick="flipAll()">🔄 Перевернути всі</button>
-      <div class="flash-grid" id="flashGridPart2"></div>
-    </div>
-
-    <div class="part-card">
       <h2>🧩 Пазл — заповни пропуски</h2>
       <div id="puzzle2"></div>
       <button class="check-btn" onclick="checkPuzzle(1)">✅ Перевірити</button>
       <div class="pzl-score" id="pzl-score-1"></div>
     </div>
+    <div class="next-task-wrapper">
+      <button class="next-task-btn" onclick="goToTab('vocab3')">Наступне завдання →</button>
+    </div>
+  </div>
 
-    <!-- КНОПКА ПЕРЕХОДУ -->
+  <!-- ========== VOCABULARY 3 (WORWALL) TAB ========== -->
+  <div class="tab-panel" id="panel-vocab3">
+    <div class="part-card">
+      <h2>🎯 Вправи на закріплення (Лексика 3)</h2>
+      <div class="ww-carousel" id="v3Carousel">
+        <div class="ww-slide active" id="v3slide-0"><iframe src="https://wordwall.net/uk/embed/1a66d82f2b864e2786449bb55bf8266a?themeId=1&templateId=3&fontStackId=0" style="max-width:100%;width:100%;height:380px;" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v3slide-1"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/5e6d67a23be94c0fb185b0de1fcc9140?themeId=66&templateId=38&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v3slide-2"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/a8b86a1a015549d39e20a5ffd175d30c?themeId=1&templateId=5&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v3slide-3"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/03b6b79a423a4af1828f1998fbb0cbe9?themeId=65&templateId=38&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="car-controls">
+          <button class="car-btn" id="v3prev" disabled onclick="wwCarousel('v3',-1)">← Назад</button>
+          <span class="car-counter" id="v3counter">1 / 4</span>
+          <button class="car-btn" id="v3next" onclick="wwCarousel('v3',1)">Далі →</button>
+        </div>
+      </div>
+    </div>
     <div class="next-task-wrapper">
       <button class="next-task-btn" onclick="goToTab('part3')">Наступне завдання →</button>
     </div>
@@ -555,16 +588,11 @@
   <!-- ========== PART 3 ========== -->
   <div class="tab-panel" id="panel-part3">
     <div class="part-card">
-      <h2>🎬 Частина 3 <small>(16:15 – кінець)</small></h2>
+      <h2>🎬 Частина 3 <small>(14:21 – кінець)</small></h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/7nVsZ6_ncds?start=975" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/Vp9G3j_im0s?start=861" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
       </div>
       <div class="video-note">⏱️ Відео триває до кінця.</div>
-    </div>
-
-    <div class="part-card">
-      <h2>📚 Слова до частини 3</h2>
-      <div class="vocab-grid" id="vocab3"></div>
     </div>
 
     <div class="part-card">
@@ -574,26 +602,45 @@
     </div>
 
     <div class="part-card">
-      <h2>🃏 Картки (сталі вирази) — Частина 3</h2>
-      <button class="flip-all-btn" onclick="flipAll()">🔄 Перевернути всі</button>
-      <div class="flash-grid" id="flashGridPart3"></div>
-    </div>
-
-    <div class="part-card">
       <h2>🧩 Пазл — заповни пропуски</h2>
       <div id="puzzle3"></div>
       <button class="check-btn" onclick="checkPuzzle(2)">✅ Перевірити</button>
       <div class="pzl-score" id="pzl-score-2"></div>
     </div>
+    <div class="next-task-wrapper">
+      <button class="next-task-btn" onclick="goToTab('vocab4')">Наступне завдання →</button>
+    </div>
+  </div>
 
-    <!-- КНОПКА ПЕРЕХОДУ -->
+  <!-- ========== VOCABULARY 4 (WORWALL) TAB ========== -->
+  <div class="tab-panel" id="panel-vocab4">
+    <div class="part-card">
+      <h2>🎯 Вправи на закріплення (Лексика 4)</h2>
+      <div class="ww-carousel" id="v4Carousel">
+        <div class="ww-slide active" id="v4slide-0"><iframe src="https://wordwall.net/uk/embed/c439283aca654d16b9b6c591b16322f1?themeId=1&templateId=46&fontStackId=0" style="max-width:100%;width:100%;height:380px;" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v4slide-1"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/7faa0d2e23bc47729b41868412d898b2?themeId=1&templateId=3&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v4slide-2"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/1e5c799853fa447c886ac768f4254c7d?themeId=55&templateId=79&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="ww-slide" id="v4slide-3"><iframe style="max-width:100%;width:100%;height:380px;" data-src="https://wordwall.net/uk/embed/0f88ea131a4f4ff0b1a36339c154c780?themeId=68&templateId=79&fontStackId=0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="car-controls">
+          <button class="car-btn" id="v4prev" disabled onclick="wwCarousel('v4',-1)">← Назад</button>
+          <span class="car-counter" id="v4counter">1 / 4</span>
+          <button class="car-btn" id="v4next" onclick="wwCarousel('v4',1)">Далі →</button>
+        </div>
+      </div>
+    </div>
     <div class="next-task-wrapper">
       <button class="next-task-btn" onclick="goToTab('practice')">Наступне завдання →</button>
     </div>
   </div>
 
-  <!-- ========== PRACTICE ========== -->
+  <!-- ========== PRACTICE TAB ========== -->
   <div class="tab-panel" id="panel-practice">
+    <div class="part-card">
+      <h2>🃏 Картки (сталі вирази)</h2>
+      <button class="flip-all-btn" onclick="flipAll()">🔄 Перевернути всі</button>
+      <div class="flash-grid" id="flashGrid"></div>
+    </div>
+
     <div class="part-card">
       <h2>📖 Читання (транскрипти)</h2>
       <div id="readingSlides"></div>
@@ -602,12 +649,6 @@
         <span class="car-counter" id="rcounter">1 / 3</span>
         <button class="car-btn" id="rnext" onclick="carNav('r',1)">Далі →</button>
       </div>
-    </div>
-
-    <div class="part-card">
-      <h2>🃏 Картки (сталі вирази) — Найкорисніші для життя</h2>
-      <button class="flip-all-btn" onclick="flipAll()">🔄 Перевернути всі</button>
-      <div class="flash-grid" id="flashGridPractice"></div>
     </div>
 
     <div class="part-card">
@@ -642,242 +683,197 @@
 
 <script>
 // ============================================================
-// КОНФІГУРАЦІЯ (тут усе налаштовується для наступних уроків)
+// КОНФІГУРАЦІЯ (епізод 02 – Hector goes shopping)
 // ============================================================
 const CONFIG = {
-  // Словник поділено за частинами відео
-  vocab: {
-    part1: [
-      { en: 'Taurus', ua: 'Телець' },
-      { en: 'Cancer', ua: 'Рак' },
-      { en: 'the dry cleaner\'s', ua: 'хімчистка' },
-      { en: 'the traffic lights', ua: 'світлофор' },
-      { en: 'From now on', ua: 'Відтепер' },
-      { en: 'Luxury', ua: 'розкіш' },
-      { en: 'charity', ua: 'благодійність' },
-      { en: 'resign / quit', ua: 'звільнятися / кидати' },
-    ],
-    part2: [
-      { en: 'disappeared', ua: 'зник' },
-      { en: 'arrange the cushions', ua: 'розкласти подушки' },
-      { en: 'your fault', ua: 'твоя вина' },
-      { en: 'rubbish bin', ua: 'сміттєвий бак' },
-      { en: 'dustman', ua: 'сміттяр' },
-    ],
-    part3: [
-      { en: 'be claimed', ua: 'бути затребуваним' },
-      { en: 'prize', ua: 'приз, виграш' },
-      { en: 'tricked', ua: 'обманутий' },
-      { en: 'yoga', ua: 'йога' },
-    ]
-  },
-
-  // Розподіл карток по частинах (відповідно до сценарію)
-  partFlashcards: {
-    part1: [
-      { en: 'I have won the lottery!', ua: 'Я виграв у лотерею!' },
-      { en: 'It is my lucky day.', ua: 'Це мій щасливий день.' },
-      { en: 'I have never heard of it.', ua: 'Я ніколи про це не чув.' },
-      { en: 'Could you get my dress?', ua: 'Можеш забрати мою сукню?' },
-      { en: 'The ticket has disappeared.', ua: 'Квиток зник.' },
-      { en: 'From now on', ua: 'Відтепер' },
-      { en: 'Keep your job.', ua: 'Залишай собі свою роботу.' },
-      { en: 'be crazy about smb/smth', ua: 'бути божевільним від когось/чогось' }
-    ],
-    part2: [
-      { en: 'I have lost the ticket.', ua: 'Я загубив квиток.' },
-      { en: 'Don\'t come back until you\'ve V(ed)', ua: 'Не повертайся, поки не зробиш...' },
-      { en: 'Great idea, Nick!', ua: 'Чудова ідея, Ніку!' },
-      { en: 'I made 50 cleaning windscreens.', ua: 'Я помив 50 вітрових стекол.' },
-      { en: 'Don\'t come back until you find it.', ua: 'Не повертайся, поки не знайдеш.' },
-      { en: 'life is turned upside-down', ua: 'життя перевернулося догори дном' }
-    ],
-    part3: [
-      { en: 'I can claim my money!', ua: 'Я можу отримати свої гроші!' },
-      { en: 'You tricked me!', ua: 'Ти мене обдурив!' },
-      { en: 'It can\'t get any worse.', ua: 'Гірше вже не буде.' },
-      { en: 'I know just the men for the job.', ua: 'Я знаю саме тих людей для цієї роботи.' }
-    ]
-  },
-
-  // 12 найкорисніших виразів для Практики (тепер перевернуті з початку)
-  practiceFlashcards: [
-    { en: 'It can\'t get any worse.', ua: 'Гірше вже не буде.' },
-    { en: 'life is turned upside-down', ua: 'життя перевернулося догори дном' },
-    { en: 'be crazy about smb/smth', ua: 'бути без тями від когось/чогось' },
-    { en: 'From now on', ua: 'Відтепер' },
-    { en: 'I know just the men for the job.', ua: 'Я знаю саме тих людей для цієї роботи.' },
-    { en: 'You tricked me!', ua: 'Ти мене обдурив!' },
-    { en: 'Now where was I?', ua: 'На чому я зупинився?' },
-    { en: 'What\'s wrong with …?', ua: 'Що не так з …?' },
-    { en: 'Don\'t come back until you\'ve V(ed)', ua: 'Не повертайся, поки не зробиш...' },
-    { en: 'I have won the lottery!', ua: 'Я виграв у лотерею!' },
-    { en: 'It is my lucky day.', ua: 'Це мій щасливий день.' },
-    { en: 'I can claim my money!', ua: 'Я можу отримати свої гроші!' }
-  ],
-
-  // Тести англійською
   quizzes: {
     part1: [
-      { q: 'What does Bridget do to keep calm?', opts: ['Drinks tea', 'Does yoga', 'Listens to music', 'Watches TV'], ans: 1 },
-      { q: 'Where does Hector have to go?', opts: ['To the supermarket', 'To the dry cleaner\'s', 'To the park', 'To the bank'], ans: 1 },
-      { q: 'What mistake does Hector make?', opts: ['He loses his phone', 'He takes the wrong ticket', 'He forgets his wallet', 'He comes at the wrong time'], ans: 1 },
+      { q: 'What is Annie doing at the beginning?', opts: ['Reading an email', 'Cooking breakfast', 'Sleeping', 'Cleaning'], ans: 0 },
+      { q: 'What does Bridget want to do for Hector?', opts: ['Teach him English', 'Take him shopping', 'Cook for him', 'Drive his car'], ans: 1 },
+      { q: 'What did Nick teach Hector to say in the shop?', opts: ['"I want a jacket"', '"I would like a pair of trousers, please"', '"I need a cat"', '"I am rich"'], ans: 1 },
     ],
     part2: [
-      { q: 'Who wrote an email?', opts: ['Bridget', 'Annie', 'Nick', 'Hector'], ans: 1 },
-      { q: 'What new job does Nick suggest for Hector?', opts: ['Driver', 'Security guard', 'Dustman', 'Shopkeeper'], ans: 2 },
-      { q: 'What did Nick do at the traffic lights?', opts: ['Cleaned windscreens', 'Lost his keys', 'Kissed Emily', 'Bought coffee'], ans: 0 },
+      { q: 'What did Hector buy online instead of ten lemons?', opts: ['Apples', 'Melons', 'Oranges', 'Bananas'], ans: 1 },
+      { q: 'How many eggs did Hector order?', opts: ['12', '24', '144', '100'], ans: 2 },
+      { q: 'Who called Hector on the intercom?', opts: ['Nick', 'Annie', 'The landlady', 'The postman'], ans: 2 },
     ],
     part3: [
-      { q: 'Where did they find the lottery ticket?', opts: ['On the table', 'On Nick\'s bed', 'In the rubbish bin', 'In Hector\'s pocket'], ans: 1 },
-      { q: 'Why didn\'t the winning numbers match?', opts: ['Bridget watched the wrong channel', 'Bridget did yoga and turned the paper upside down', 'Hector lost the ticket', 'Nick changed them'], ans: 1 },
-      { q: 'Who answered Nick\'s call to Emily\'s number?', opts: ['Emily', 'Jack\'s Taxis', 'The police', 'The hospital'], ans: 1 },
+      { q: 'What did Bridget buy for Hector?', opts: ['A shirt', 'A sarong', 'A hat', 'A jacket'], ans: 1 },
+      { q: 'What does the landlady tell Bridget at the end?', opts: ['The rent is due', 'There are 400 tins of dog food', 'The water is off', 'She needs help'], ans: 1 },
+      { q: 'How does Hector look at the end of the episode?', opts: ['Terrible', 'Cool / Great', 'Funny', 'Old fashioned'], ans: 1 },
     ]
   },
 
-  // Пазли (gap-fill) на кожну частину
   puzzles: {
     part1: {
-      bank: ['Taurus', 'Cancer', 'dry cleaner\'s', 'traffic lights', 'From now on', 'Luxury', 'charity', 'resign'],
+      bank: ['Argentinian', 'cold', 'shopping', 'trousers', 'cat'],
       sentences: [
-        'Bridget says she is a {Taurus} and today is Lotto day.',
-        'She thinks that colour is very unlucky for {Cancer}.',
-        'Hector must go to the {dry cleaner\'s} to pick up the dress.',
-        'Nick met Emily at the {traffic lights}.',
-        '{From now on}, Bridget will live a life of {Luxury}.',
-        'She plans to give money to {charity}.',
-        'Bridget decides to {resign} from her job immediately.'
+        'Annie is looking for an {Argentinian} boyfriend.',
+        'Bridget and Annie have a {cold}.',
+        'Bridget wants to take Hector {shopping}.',
+        'Hector asks for a pair of {trousers} at the shop.',
+        'Hector says he wants a {cat} for his head.'
       ]
     },
     part2: {
-      bank: ['disappeared', 'arrange', 'cushions', 'fault', 'rubbish bin', 'dustman'],
+      bank: ['melons', 'eggs', 'dozen', 'intercom', 'tarantula'],
       sentences: [
-        'Bridget\'s lottery ticket has {disappeared}.',
-        'She likes to {arrange} the {cushions} in a special order.',
-        'Hector says it\'s his {fault}.',
-        'Nick tells Hector to search the {rubbish bin}.',
-        'Hector pretends to be a {dustman} to search for the ticket.'
+        'Hector bought ten {melons} instead of ten lemons.',
+        'Hector ordered twelve boxes of {eggs}.',
+        'A {dozen} is twelve.',
+        'The landlady spoke through the {intercom}.',
+        'Hector thought the caller was a {tarantula}.'
       ]
     },
     part3: {
-      bank: ['claimed', 'prize', 'tricked', 'yoga', 'position'],
+      bank: ['sarong', 'shoes', 'cool', 'tins', 'servants'],
       sentences: [
-        'Bridget calls to claim the {prize} money.',
-        'She was doing {yoga} during the lottery draw.',
-        'Emily {tricked} Nick with a fake number.',
-        'Bridget read the numbers upside down because of her {position}.',
-        'The ticket must be {claimed} by 10 o\'clock.'
+        'Bridget bought Hector a {sarong} from the shop.',
+        'Nick bought Hector a new pair of {shoes}.',
+        'At the end, everyone thinks Hector looks {cool}.',
+        'The landlady says there are four hundred {tins} of dog food.',
+        'Hector told Nick that he had {servants} at home.'
       ]
     }
   },
 
-  // Транскрипти для читання (3 частини)
   readingScripts: [
-    // Part 1
-    `<p><span class="reading-speaker">Bridget:</span> Because that colour is very unlucky for me and today is Lotto day!</p>
-     <p><span class="reading-speaker">Hector:</span> Lotto day?</p>
-     <p><span class="reading-speaker">Bridget:</span> The Lottery. I pick 5 numbers. If my numbers match, I win millions!</p>
-     <p><span class="reading-speaker">Hector:</span> I've never heard of it.</p>
-     <p><span class="reading-speaker">Annie:</span> Bridget gets very excited.</p>
-     <p><span class="reading-speaker">Bridget:</span> But I know how to keep calm. Yoga.</p>
-     <p><span class="reading-speaker">Hector:</span> I am going shopping. Do you need anything?</p>
-     <p><span class="reading-speaker">Bridget:</span> Could you get my dress from the dry cleaner's? The blue ticket is on the board.</p>
-     <p><span class="reading-speaker">Nick:</span> Hector! I've just been to see Bridget.</p>
-     <p><span class="reading-speaker">Nick:</span> I met a girl called Emily. She gave me her phone number.</p>
-     <p><span class="reading-speaker">TV:</span> Now it's time for the National Lottery.</p>
-     <p><span class="reading-speaker">Bridget:</span> I've won! I have won the National Lottery! From now on, it will be a life of luxury. I'll resign!</p>
-     <p><span class="reading-speaker">Bridget:</span> My Lottery ticket has disappeared! But the dry cleaning ticket is still there. Hector has taken the wrong ticket.`,
+    `<div class="reading-line"><span class="reading-speaker">Annie:</span> What's he like? Argentinian, tall, handsome! Oh, wow, fantastic! A new boyfriend for you maybe!</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Hector, please, call me Gigi.</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> Oh Hector, call me Gigi. Oh. Must go. More news later. A.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Is Hector still asleep? Aah. Hector, wakey-wakey. Come on, rise and shine.</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> No, no, no, good morning. Ah-ah-ah. I have a cold.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> And so have I.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Oh you have a cold, Bridget.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Yes, I have a cold. Hector, would you like some... New pyjamas?</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Good morning. Is it fancy dress?</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Fancy dress? Yes.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Hey, nice car! Girls must love you.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Girls, no.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> No? Hector, the car looks good, so you must look good too!</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> I can help you. You need a biker look! A leather jacket and a motorbike.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Ah, stop!! OK, I will go shopping.</div>`,
 
-    // Part 2
-    `<p><span class="reading-speaker">Annie:</span> The bad news is, her winning Lottery ticket has disappeared. Bridget asked Hector to collect her dry cleaning, but Hector took the wrong ticket!</p>
-     <p><span class="reading-speaker">Hector:</span> Got it!</p>
-     <p><span class="reading-speaker">Nick:</span> Two girls in one day. Call me Mr. Irresistible.</p>
-     <p><span class="reading-speaker">Hector:</span> Hi, Bridget. Oops! Your dress, Bridget. I forgot, sorry...</p>
-     <p><span class="reading-speaker">Bridget:</span> You have the wrong ticket. Now give it to me.</p>
-     <p><span class="reading-speaker">Hector:</span> I have lost the ticket.</p>
-     <p><span class="reading-speaker">Bridget:</span> You have lost the ticket?! It was my winning Lottery ticket.</p>
-     <p><span class="reading-speaker">Bridget:</span> This is your fault too! Go back and look for it! Don't come back until you've found it!</p>
-     <p><span class="reading-speaker">Nick:</span> I hope you find the ticket. I am going to the traffic lights.</p>
-     <p><span class="reading-speaker">Hector:</span> What shall I do?</p>
-     <p><span class="reading-speaker">Nick:</span> Pretend to be a dustman and search the rubbish bins!</p>
-     <p><span class="reading-speaker">Hector:</span> A dustman! Great idea, Nick.`,
+    `<div class="reading-line"><span class="reading-speaker">Annie:</span> How? What will you say?</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> It's OK, leave it to me. I am the shopkeeper, you are the customer.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Good morning. Can I help you?</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Yes, I would like a pair of trousers, please.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> And a cat for my head!</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> I think you mean a hat. This is a cat!</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> A cat for my head!</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> I completely forgot! We need eggs, lemons and dog food. Oh, it's all right, I'll do it online later.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Eggs, lemon, dog food.</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> Oh well done, Hector.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Bye Hector. Oh, and don't answer the phone, it might be the tarantula.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Hello. Dog food for my head.</div>
+     <div class="reading-line"><span class="reading-speaker">Landlady:</span> Who's that?</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Aah! The tarantula! Me, I am Bridget.</div>
+     <div class="reading-line"><span class="reading-speaker">Landlady:</span> I don't believe you.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> Yes, I have a cold!</div>
+     <div class="reading-line"><span class="reading-speaker">Landlady:</span> Oh, I'm sorry. Is that a dog?</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> No, no, it is not a dog, Annie has a cold also!</div>`,
 
-    // Part 3
-    `<p><span class="reading-speaker">Annie:</span> Charlie? What's this? Ohhhh! Bridget! I found it! Your ticket!</p>
-     <p><span class="reading-speaker">Bridget:</span> On Nick's bed! Give it to me.</p>
-     <p><span class="reading-speaker">Nick:</span> Emily's number's on the back! Give it to me!</p>
-     <p><span class="reading-speaker">Annie:</span> It's OK, I'll stick it back together. Done!</p>
-     <p><span class="reading-speaker">Bridget:</span> Thank you! Now I can claim my prize money!</p>
-     <p><span class="reading-speaker">Nick:</span> I can call Emily now!</p>
-     <p><span class="reading-speaker">Bridget:</span> Hello! I'd like to claim my prize... What? They're not the winning numbers?</p>
-     <p><span class="reading-speaker">Hector:</span> Bridget, what were you doing while watching the Lottery?</p>
-     <p><span class="reading-speaker">Bridget:</span> My yoga.</p>
-     <p><span class="reading-speaker">Hector:</span> Which position? Exactly. These are your numbers, but upside down.</p>
-     <p><span class="reading-speaker">Bridget:</span> Ohhh!!</p>
-     <p><span class="reading-speaker">Nick:</span> Emily's number... Hello, is Emily there? No? Who are you? Jack's Taxis? Emily! You tricked me!</p>
-     <p><span class="reading-speaker">Bridget:</span> We must get that tape back. Now.`
+    `<div class="reading-line"><span class="reading-speaker">Hector:</span> Good afternoon, Annie.</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> Good afternoon, Hector. I bought this for you. Try it on.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Where's Hector?</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> In the bathroom.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Good. I'll give this to him.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Hector! Here are your clothes, you will look so cool.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Melons? Who are those from?</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> I think Hector has been shopping online.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Ha, ha! He ordered melons instead of lemons and one hundred and forty-four eggs!</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> I'm ready! Do you like it? Well?</div>
+     <div class="reading-line"><span class="reading-speaker">Annie:</span> I like the shirt.</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> I like the sarong.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> I like the shoes.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> So, am I cool? No, I'm not cool.</div>
+     <div class="reading-line"><span class="reading-speaker">Nick:</span> Hector! You ordered melons instead of lemons.</div>
+     <div class="reading-line"><span class="reading-speaker">Hector:</span> But I have servants!</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Come on, we will teach you how to shop.</div>
+     <div class="reading-line"><span class="reading-speaker">Landlady:</span> Why are four hundred tins of dog food here for Annie?</div>
+     <div class="reading-line"><span class="reading-speaker">Bridget:</span> Four hundred tins? HECTOR!!</div>`
   ],
 
-  // Speaking (4 діалоги)
+  flashcards: [
+    { en: 'rise and shine', ua: 'прокидайся і сяй' },
+    { en: 'fancy dress', ua: 'костюмований одяг' },
+    { en: 'old fashioned', ua: 'старомодний' },
+    { en: 'designer look', ua: 'дизайнерський стиль' },
+    { en: 'cowboy look', ua: 'ковбойський стиль' },
+    { en: 'biker look', ua: 'байкерський стиль' },
+    { en: 'a pair of trousers', ua: 'пара штанів' },
+    { en: 'a cat for my head', ua: 'кіт на голові (замість капелюха)' },
+    { en: 'I would like...', ua: 'Я хотів би...' },
+    { en: 'Can I help you?', ua: 'Чим я можу вам допомогти?' },
+    { en: 'What size?', ua: 'Який розмір?' },
+    { en: 'spoil sport', ua: 'зануда / псувальник задоволення' }
+  ],
+
   speaking: [
     {
-      title: 'Діалог 1 (парний) — У хімчистці',
+      title: 'Діалог 1 (парний) — Покупки одягу',
       interview: false,
       lines: [
-        { role: 'Студент А', text: 'Привіт! Ти можеш забрати мою сукню з хімчистки?' },
-        { role: 'Студент Б', text: 'Звичайно, дай мені квиток.' },
-        { role: 'Студент А', text: 'Ось він. Будь обережний, не загуби.' },
-        { role: 'Студент Б', text: 'Не хвилюйся, я все зроблю.' },
-        { role: 'Студент А', text: 'Дякую! Це дуже важливо.' }
+        { role: 'Студент А', text: 'Добрий день! Чим я можу вам допомогти?' },
+        { role: 'Студент Б', text: 'Я хотів би купити нові штани.' },
+        { role: 'Студент А', text: 'Який у вас розмір?' },
+        { role: 'Студент Б', text: 'Я не впевнений. Можете виміряти?' },
+        { role: 'Студент А', text: 'Звичайно. Підніміть руки, будь ласка.' },
+        { role: 'Студент Б', text: 'Спасибі. Ці штани підходять?' },
+        { role: 'Студент А', text: 'Так, вони виглядають чудово!' },
       ]
     },
     {
-      title: 'Діалог 2 (парний) — Пошуки квитка',
+      title: 'Діалог 2 (парний) — В супермаркеті',
       interview: false,
       lines: [
-        { role: 'Студент А', text: 'Я загубив лотерейний квиток!' },
-        { role: 'Студент Б', text: 'Де ти його востаннє бачив?' },
-        { role: 'Студент А', text: 'На дошці, поруч із холодильником.' },
-        { role: 'Студент Б', text: 'Можливо, він у твоїй кишені?' },
-        { role: 'Студент А', text: 'Ні, я вже перевіряв. Що мені робити?' },
-        { role: 'Студент Б', text: 'Треба повернутися і пошукати.' }
+        { role: 'Студент А', text: 'Нам потрібно купити яйця та лимони.' },
+        { role: 'Студент Б', text: 'Окей, я куплю яйця. Скільки?' },
+        { role: 'Студент А', text: 'Один десяток (дванадцять) буде достатньо.' },
+        { role: 'Студент Б', text: 'А що ще нам потрібно?' },
+        { role: 'Студент А', text: 'Їжа для собаки. Не забудь купити корм!' },
+        { role: 'Студент Б', text: 'Добре. Але не замовляй занадто багато!' },
       ]
     },
     {
-      title: 'Діалог 3 (інтерв\'ю) — Про виграш',
+      title: 'Діалог 3 (інтерв\'ю) — Чи любиш ти ходити по магазинах?',
       interview: true,
       note: '🎤 Студент А перекладає запитання англійською, Студент Б відповідає про себе.',
       lines: [
-        { role: 'Студент А', text: 'Як часто ти купуєш лотерейні квитки?' },
+        { role: 'Студент А', text: 'Ти любиш ходити по магазинах?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'Що б ти зробив(ла), якби виграв багато грошей?' },
+        { role: 'Студент А', text: 'Які магазини твої улюблені?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'Ти коли-небудь вигравав(ла) щось у лотерею?' },
+        { role: 'Студент А', text: 'Ти купуєш одяг онлайн?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'Яка твоя улюблена цифра?' },
-        { role: 'Студент Б', blank: true }
+        { role: 'Студент А', text: 'Що ти зазвичай купуєш у супермаркеті?' },
+        { role: 'Студент Б', blank: true },
+        { role: 'Студент А', text: 'Тобі подобається робити покупки з друзями?' },
+        { role: 'Студент Б', blank: true },
       ]
     },
     {
-      title: 'Діалог 4 (інтерв\'ю) — Про удачу',
+      title: 'Діалог 4 (інтерв\'ю) — Ввічливі прохання та пропозиції',
       interview: true,
       note: '🎤 Студент А перекладає запитання англійською, Студент Б відповідає про себе.',
       lines: [
-        { role: 'Студент А', text: 'Що для тебе означає "вдалий день"?' },
+        { role: 'Студент А', text: 'Як ти просиш про допомогу в магазині?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'У тебе є улюблене щасливе число?' },
+        { role: 'Студент А', text: 'Як ти пропонуєш допомогу іншим?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'Який був найкращий день у твоєму житті?' },
+        { role: 'Студент А', text: 'Чи говориш ти "будь ласка" і "дякую"?' },
         { role: 'Студент Б', blank: true },
-        { role: 'Студент А', text: 'Чи траплялося з тобою щось дуже невдале?' },
-        { role: 'Студент Б', blank: true }
+        { role: 'Студент А', text: 'Що б ти сказав, якби хотів приміряти одяг?' },
+        { role: 'Студент Б', blank: true },
+        { role: 'Студент А', text: 'Як ти реагуєш, коли тобі пропонують допомогу?' },
+        { role: 'Студент Б', blank: true },
       ]
-    }
+    },
   ]
 };
 
 // ============================================================
-// РУШІЙ (не змінюйте)
+// РУШІЙ
 // ============================================================
 
 const quizAnswered = {};
@@ -885,6 +881,8 @@ const correctMap = {};
 const quizScores = {};
 const puzzleScores = {};
 const carState = { r: 0, sp: 0 };
+const wwState = { v: 0, p1: 0, p2: 0, p3: 0, v3: 0, v4: 0 };
+const wwMax = { v: 2, p1: 2, p2: 3, p3: 3, v3: 3, v4: 3 };
 
 function shuffle(arr) {
   const a = [...arr];
@@ -895,15 +893,6 @@ function shuffle(arr) {
   return a;
 }
 
-function speak(text) {
-  const synth = window.speechSynthesis;
-  if (!synth) return;
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'en-US';
-  utter.rate = 0.9;
-  synth.speak(utter);
-}
-
 function makeSel(word, pi, bank) {
   const shuffled = shuffle(bank);
   let o = '<option value="">—</option>';
@@ -911,56 +900,84 @@ function makeSel(word, pi, bank) {
   return '<select class="pzl-sel" data-ans="' + word + '" data-pi="' + pi + '">' + o + '</select>';
 }
 
-// Вкладки
-document.querySelectorAll('.tab-btn').forEach(btn => {
+// ---- Tabs ----
+const tabHeaders = document.querySelectorAll('.tab-btn');
+tabHeaders.forEach(btn => {
   btn.addEventListener('click', function() {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    tabHeaders.forEach(b => b.classList.remove('active'));
     this.classList.add('active');
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-' + this.dataset.tab).classList.add('active');
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('panel-' + this.dataset.tab);
+    target.classList.add('active');
+
+    setTimeout(() => {
+      loadCarouselForPanel(target);
+    }, 100);
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
-// Рендер словника
-function renderVocab(partKey, containerId) {
-  const list = CONFIG.vocab[partKey] || [];
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  let html = '';
-  list.forEach(v => {
-    const safe = v.en.replace(/'/g, "\\'");
-    html += '<div class="vocab-item">' +
-      '<div><div class="vocab-word">' + v.en + '</div><div class="vocab-ua">' + v.ua + '</div></div>' +
-      '<button class="speak-btn" onclick="speak(\'' + safe + '\')">🔊</button>' +
-    '</div>';
+function loadCarouselForPanel(panel) {
+  const carousels = panel.querySelectorAll('.ww-carousel');
+  carousels.forEach(carousel => {
+    const activeSlide = carousel.querySelector('.ww-slide.active');
+    if (activeSlide) {
+      loadIframesInSlide(activeSlide);
+    }
   });
-  container.innerHTML = html;
 }
-renderVocab('part1', 'vocab1');
-renderVocab('part2', 'vocab2');
-renderVocab('part3', 'vocab3');
 
-// Рендер карток для частин
-function renderPartFlashcards(partKey, containerId) {
-  const list = CONFIG.partFlashcards[partKey] || [];
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  let html = '';
-  list.forEach((card, i) => {
-    html += '<div class="flash-card" onclick="this.classList.toggle(\'flipped\')">' +
-      '<div class="flash-inner">' +
-      '<div class="flash-front">' + card.en + '<small>🇬🇧 Перекладай українською</small></div>' +
-      '<div class="flash-back">' + card.ua + '</div>' +
-      '</div></div>';
+// ---- Wordwall Carousel (оновлена функція для перезавантаження iframe) ----
+function loadIframesInSlide(slideEl) {
+  if (!slideEl) return;
+  const iframes = slideEl.querySelectorAll('iframe');
+  iframes.forEach(iframe => {
+    // Якщо є data-src, а src порожній, беремо з data-src
+    if (iframe.dataset.src && !iframe.src) {
+      iframe.src = iframe.dataset.src;
+      iframe.removeAttribute('data-src');
+    } else if (iframe.src) {
+      // Якщо src вже є (наприклад, перший слайд), але він не завантажився через те, 
+      // що вкладка була прихована (display: none) - примусово перезавантажуємо
+      const currentSrc = iframe.src;
+      iframe.src = '';
+      iframe.src = currentSrc;
+    }
   });
-  container.innerHTML = html;
 }
-renderPartFlashcards('part1', 'flashGridPart1');
-renderPartFlashcards('part2', 'flashGridPart2');
-renderPartFlashcards('part3', 'flashGridPart3');
 
-// Рендер тестів
+function wwCarousel(id, dir) {
+  const max = wwMax[id] || 0;
+  const newIdx = Math.max(0, Math.min(max, wwState[id] + dir));
+  wwState[id] = newIdx;
+  const idx = newIdx;
+  // Визначаємо префікс для id слайда
+  let prefix = '';
+  if (id === 'v' || id === 'v3' || id === 'v4') prefix = id + 'slide';
+  else prefix = id === 'p1' ? 'p1slide' : id === 'p2' ? 'p2slide' : 'p3slide';
+
+  for (let i = 0; i <= max; i++) {
+    const el = document.getElementById(prefix + '-' + i);
+    if (el) {
+      el.classList.toggle('active', i === idx);
+      if (i === idx) {
+        loadIframesInSlide(el);
+      }
+    }
+  }
+
+  const prevBtn = document.getElementById(id + 'prev');
+  const nextBtn = document.getElementById(id + 'next');
+  const counter = document.getElementById(id + 'counter');
+
+  if (prevBtn) prevBtn.disabled = (idx === 0);
+  if (nextBtn) nextBtn.disabled = (idx === max);
+  if (counter) counter.textContent = (idx + 1) + ' / ' + (max + 1);
+}
+
+// ---- Render Quizzes ----
 function renderQuiz(partKey, containerId, resultId, partIndex) {
   const questions = CONFIG.quizzes[partKey] || [];
   const container = document.getElementById(containerId);
@@ -982,19 +999,16 @@ renderQuiz('part1', 'quiz1', 'qresult1', 0);
 renderQuiz('part2', 'quiz2', 'qresult2', 1);
 renderQuiz('part3', 'quiz3', 'qresult3', 2);
 
-// Логіка тесту
 function answerQuiz(qKey, qi, oi, ans, convIdx, btn) {
   const ck = qKey + '-' + qi;
   if (quizAnswered[ck]) return;
   quizAnswered[ck] = true;
   correctMap[ck] = (oi === ans);
-
   const parent = btn.parentElement;
   const allOpts = parent.querySelectorAll('.quiz-opt');
   allOpts.forEach(b => b.disabled = true);
   if (oi === ans) { btn.classList.add('correct'); }
   else { btn.classList.add('wrong'); allOpts[ans].classList.add('correct'); }
-
   const total = CONFIG.quizzes['part' + (convIdx+1)].length;
   const allDone = Array.from({length: total}, (_, k) => !!quizAnswered[qKey + '-' + k]).every(Boolean);
   if (allDone) {
@@ -1011,7 +1025,7 @@ function answerQuiz(qKey, qi, oi, ans, convIdx, btn) {
   }
 }
 
-// Рендер пазлів
+// ---- Render Puzzles ----
 function renderPuzzle(partKey, containerId, partIndex) {
   const data = CONFIG.puzzles[partKey];
   if (!data) return;
@@ -1028,7 +1042,6 @@ renderPuzzle('part1', 'puzzle1', 0);
 renderPuzzle('part2', 'puzzle2', 1);
 renderPuzzle('part3', 'puzzle3', 2);
 
-// Перевірка пазлу
 function checkPuzzle(partIndex) {
   const pKey = 'p' + (partIndex + 1);
   const sels = document.querySelectorAll('#panel-part' + (partIndex+1) + ' .pzl-sel');
@@ -1050,12 +1063,15 @@ function markPartDone(partIndex) {
   const qDone = quizScores[qKey] ? true : false;
   const pDone = puzzleScores[pKey] ? true : false;
   const tabBtns = document.querySelectorAll('.tab-btn');
-  if (qDone && pDone) {
-    tabBtns[partIndex].classList.add('done');
+  // Індекс вкладки для Частини: 1 (vocab1), 2 (part1), 3 (vocab2), 4 (part2), 5 (vocab3), 6 (part3), 7 (vocab4), 8 (practice)
+  // partIndex 0 => part1 (індекс 2), partIndex 1 => part2 (індекс 4), partIndex 2 => part3 (індекс 6)
+  const tabIndex = 2 + (partIndex * 2);
+  if (qDone && pDone && tabBtns[tabIndex]) {
+    tabBtns[tabIndex].classList.add('done');
   }
 }
 
-// Читання
+// ---- Reading ----
 function renderReading() {
   const scripts = CONFIG.readingScripts;
   let html = '';
@@ -1068,24 +1084,7 @@ function renderReading() {
 }
 renderReading();
 
-// Картки для практики (тепер 12, і вони одразу перевернуті)
-function renderPracticeFlashcards() {
-  const grid = document.getElementById('flashGridPractice');
-  if (!grid) return;
-  let html = '';
-  CONFIG.practiceFlashcards.forEach((card, i) => {
-    // Додаємо клас 'flipped' одразу в HTML
-    html += '<div class="flash-card flipped" onclick="this.classList.toggle(\'flipped\')">' +
-      '<div class="flash-inner">' +
-      '<div class="flash-front">' + card.en + '<small>🇬🇧 Перекладай українською</small></div>' +
-      '<div class="flash-back">' + card.ua + '</div>' +
-      '</div></div>';
-  });
-  grid.innerHTML = html;
-}
-renderPracticeFlashcards();
-
-// Speaking (карусель)
+// ---- Speaking ----
 function renderSpeaking() {
   const container = document.getElementById('speakingSlides');
   if (!container) return;
@@ -1111,9 +1110,9 @@ function renderSpeaking() {
 }
 renderSpeaking();
 
-// Carousel навігація (для читання та говоріння)
+// ---- Carousel navigation (reading & speaking) ----
 function carNav(id, dir) {
-  const max = id === 'r' ? 2 : 3; // reading: 3 slides (0-2), speaking: 4 slides (0-3)
+  const max = id === 'r' ? 2 : 3;
   carState[id] = Math.max(0, Math.min(max, carState[id] + dir));
   const idx = carState[id];
   const prefix = id === 'r' ? 'rslide' : 'spslide';
@@ -1125,28 +1124,32 @@ function carNav(id, dir) {
   document.getElementById(id + 'next').disabled = (idx === max);
   document.getElementById(id + 'counter').textContent = (idx + 1) + ' / ' + (max + 1);
 }
-
-// Ініціалізація каруселей
 carNav('r', 0);
 carNav('sp', 0);
 
-// Перевернути всі картки (тепер враховує початковий стан flipped)
-let allFlipped = true; // Починаємо з true, бо картки вже перевернуті
+// ---- Flashcards ----
+function renderFlashcards() {
+  const grid = document.getElementById('flashGrid');
+  if (!grid) return;
+  let html = '';
+  CONFIG.flashcards.forEach((card, i) => {
+    html += '<div class="flash-card" onclick="this.classList.toggle(\'flipped\')">' +
+      '<div class="flash-inner">' +
+      '<div class="flash-front">' + card.en + '<small>🇬🇧 Перекладай українською</small></div>' +
+      '<div class="flash-back">' + card.ua + '</div>' +
+      '</div></div>';
+  });
+  grid.innerHTML = html;
+}
+renderFlashcards();
+
+let allFlipped = false;
 function flipAll() {
   allFlipped = !allFlipped;
   document.querySelectorAll('.flash-card').forEach(c => c.classList.toggle('flipped', allFlipped));
 }
 
-// Кнопка переходу на наступний розділ
-function goToTab(tabId) {
-  const tabBtn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
-  if (tabBtn) {
-    tabBtn.click();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-}
-
-// FAB
+// ---- FAB & Results ----
 function updateFab() {
   let g = 0, t = 0;
   Object.values(quizScores).forEach(s => { if (s) { g += s.got; t += s.total; } });
@@ -1172,8 +1175,7 @@ function openResults() {
   const pct = t > 0 ? Math.round(g / t * 100) : 0;
   const medal = pct >= 90 ? '🏆' : pct >= 70 ? '🌟' : pct >= 50 ? '👍' : '💪';
   document.getElementById('resultsTotal').textContent = medal + ' ' + g + '/' + t + ' — ' + pct + '%';
-
-  let txt = 'Extra English – 06 Bridget wins the lottery\n' + '─'.repeat(28) + '\n';
+  let txt = 'Extra English – 02 Hector goes shopping\n' + '─'.repeat(28) + '\n';
   for (let i = 1; i <= 3; i++) { const s = quizScores['q' + i]; txt += 'Тест ' + i + ': ' + (s ? s.got + '/' + s.total : '—') + '\n'; }
   for (let i = 1; i <= 3; i++) { const s = puzzleScores['p' + i]; txt += 'Пазл ' + i + ': ' + (s ? s.got + '/' + s.total : '—') + '\n'; }
   txt += '─'.repeat(28) + '\nЗагалом: ' + g + '/' + t + ' (' + pct + '%) ' + medal;
@@ -1186,6 +1188,27 @@ function copyResults() {
   ta.select();
   navigator.clipboard.writeText(ta.value).catch(() => {});
 }
+
+// ---- Перехід між вкладками ----
+function goToTab(tabId) {
+  const tabBtn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+  if (tabBtn) {
+    tabBtn.click();
+  }
+}
+
+// ---- Initialize ----
+wwCarousel('v', 0);
+wwCarousel('p1', 0);
+wwCarousel('p2', 0);
+wwCarousel('p3', 0);
+wwCarousel('v3', 0);
+wwCarousel('v4', 0);
+
+setTimeout(() => {
+  const activePanel = document.querySelector('.tab-panel.active');
+  if (activePanel) loadCarouselForPanel(activePanel);
+}, 500);
 
 updateFab();
 </script>
